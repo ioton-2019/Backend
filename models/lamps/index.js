@@ -14,13 +14,11 @@ const logger = requireWrapper('helpers/logger')
 const Schema = mongoose.Schema
 const LampSchema = new Schema(
   {
-    name: { type: String, required: true },
-    pets: { type: Array, required: true },
-    emailAddress: { type: String },
-    homeAddress: {
-      street: { type: String },
-      postalCode: { type: Number },
-      addition: { type: String }
+    type: { type: String, required: true },
+    rangeRadius: { type: Number, default: 15 },
+    coordinates: {
+      lat: { type: Number, required: true },
+      lng: { type: Number, required: true }
     }
   },
   {
@@ -40,20 +38,20 @@ const mongooseOptions = {
   reconnectInterval: 1000
 }
 
-let connectionString = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/Lamps`
+let connectionString = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/IoThon`
 
 if (process.env.DB_USER && process.env.DB_PASS) {
-  connectionString = `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}:${process.env.DB_PORT}/Lamps?authSource=admin`
+  connectionString = `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}:${process.env.DB_PORT}/IoThon?authSource=admin`
 }
 
 mongoose.Promise = global.Promise
 
-logger.info('MongoDB: trying initial connection')
+// logger.info('MongoDB: trying initial connection')
 
 const db = mongoose.createConnection()
 
 db.on('error', e => logger.error(`MongoDB: ${e}`))
-db.on('connected', e => logger.info(`MongoDB: is connected`))
+db.on('connected', e => logger.info(`MongoDB: is connected to collection lapms`))
 db.on('disconnecting', () => logger.warn('MongoDB: is disconnecting!'))
 db.on('disconnected', () => logger.warn('MongoDB: is disconnected!'))
 db.on('reconnected', () => logger.info(`MongoDB: is reconnected`))

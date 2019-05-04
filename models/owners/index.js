@@ -16,10 +16,12 @@ const OwnerSchema = new Schema(
   {
     name: { type: String, required: true },
     pets: { type: Array, required: true },
-    emailAddress: { type: String, default: '' },
+    emailAddress: { type: String },
     homeAddress: {
+      country: { type: String, default: '' },
+      city: { type: String, default: '' },
       street: { type: String, default: '' },
-      postalCode: { type: Number, default: '' },
+      postalCode: { type: String, default: '' },
       addition: { type: String, default: '' }
     }
   },
@@ -40,20 +42,20 @@ const mongooseOptions = {
   reconnectInterval: 1000
 }
 
-let connectionString = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/Owners`
+let connectionString = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/IoThon`
 
 if (process.env.DB_USER && process.env.DB_PASS) {
-  connectionString = `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}:${process.env.DB_PORT}/Owners?authSource=admin`
+  connectionString = `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}:${process.env.DB_PORT}/IoThon?authSource=admin`
 }
 
 mongoose.Promise = global.Promise
 
-logger.info('MongoDB: trying initial connection')
+// logger.info('MongoDB: trying initial connection')
 
 const db = mongoose.createConnection()
 
 db.on('error', e => logger.error(`MongoDB: ${e}`))
-db.on('connected', e => logger.info(`MongoDB: is connected`))
+db.on('connected', e => logger.info(`MongoDB: is connected to collection owners`))
 db.on('disconnecting', () => logger.warn('MongoDB: is disconnecting!'))
 db.on('disconnected', () => logger.warn('MongoDB: is disconnected!'))
 db.on('reconnected', () => logger.info(`MongoDB: is reconnected`))

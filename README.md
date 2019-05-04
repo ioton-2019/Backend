@@ -12,6 +12,9 @@ and edit these.
 #### Optional
 To import test data start `mongod` and fill it with `mongoimport --db <DB_NAME> --collection <DB_COLLECTION> --type json --file <TESTDATA>.json --jsonArray`
 
+##### Lamps
+`mongoimport --db IoThon --collection Lamps --type json --file testData/lamps.json --jsonArray`
+
 ## Run
 `npm run start`
 
