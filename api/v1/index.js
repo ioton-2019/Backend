@@ -1,8 +1,8 @@
 const express = require('express')
 const apiV1 = express.Router()
 
-const examples = require('./routes/examples')
+const owners = require('./routes/owners')
 
-apiV1.use('/examples', examples)
+apiV1.use('/owners', owners)
 
 module.exports = apiV1

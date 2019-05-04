@@ -1,10 +1,10 @@
 /* globals requireWrapper */
 
-/** This module defines the mongoose schema for an example
+/** This module defines the mongoose schema for an lamp
  *
  * @author Arne Rolf
  *
- * @module models/example/index.js
+ * @module models/lamps/index.js
  * @type {mongoose schema}
  */
 
@@ -12,14 +12,20 @@ const mongoose = require('mongoose')
 const logger = requireWrapper('helpers/logger')
 
 const Schema = mongoose.Schema
-const ExampleSchema = new Schema(
+const LampSchema = new Schema(
   {
-    title: { type: String, required: true },
-    hasNewProperty: { type: String }
+    name: { type: String, required: true },
+    pets: { type: Array, required: true },
+    emailAddress: { type: String },
+    homeAddress: {
+      street: { type: String },
+      postalCode: { type: Number },
+      addition: { type: String }
+    }
   },
   {
     _id: true,
-    collection: 'Examples',
+    collection: 'Lamps',
     timestamps: true
   }
 )
@@ -34,10 +40,10 @@ const mongooseOptions = {
   reconnectInterval: 1000
 }
 
-let connectionString = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/Example`
+let connectionString = `mongodb://${process.env.DB_HOST}:${process.env.DB_PORT}/Lamps`
 
 if (process.env.DB_USER && process.env.DB_PASS) {
-  connectionString = `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}:${process.env.DB_PORT}/Example?authSource=admin`
+  connectionString = `mongodb://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}:${process.env.DB_PORT}/Lamps?authSource=admin`
 }
 
 mongoose.Promise = global.Promise
@@ -56,4 +62,4 @@ db.on('close', () => logger.warn('MongoDB: connection closed'))
 
 db.openUri(connectionString, mongooseOptions)
 
-module.exports = db.model('Example', ExampleSchema)
+module.exports = db.model('Lamps', LampSchema)

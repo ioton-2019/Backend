@@ -3,7 +3,7 @@
 const moxios = require('moxios')
 const request = require('supertest')
 const { baseURL, codes } = require('./config')
-const path = '/examples'
+const path = '/owners'
 let example = {
   title: 'JestTest'
 }
