@@ -1,0 +1,65 @@
+[
+	{
+		"type": "Light pole",
+		"coordinates": {
+			"lat": 60.187173,
+			"lng": 24.814907
+		}
+	},
+	{
+		"type": "Light pole",
+		"coordinates": {
+			"lat": 60.187076,
+			"lng":24.815679
+		}
+	},
+	{
+		"type": "Light pole",
+		"coordinates": {
+			"lat": 60.186985,
+			"lng": 24.816602
+		}
+	},
+	{
+		"type": "Light pole",
+		"coordinates": {
+			"lat": 60.186900,
+			"lng": 24.817514
+		}
+	},
+	{
+		"type": "Bus station",
+		"coordinates": {
+			"lat": 60.186809,
+			"lng": 24.818533
+		}
+	},
+	{
+		"type": "Light pole",
+		"coordinates": {
+			"lat": 60.186745,
+			"lng": 24.819370
+		}
+	},
+	{
+		"type": "Light pole",
+		"coordinates": {
+			"lat": 60.186729,
+			"lng": 24.820046
+		}
+	},
+	{
+		"type": "Light pole",
+		"coordinates": {
+			"lat": 60.186670,
+			"lng": 24.821065
+		}
+	},
+	{
+		"type": "Light pole",
+		"coordinates": {
+			"lat": 60.186526,
+			"lng": 24.822245
+		}
+	}
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "name": "John",
+    "pets": ["5ccdab63e300864b392ff982", "5ccdabe728af994fdb191078"],
+    "emailAddress": "jhondoe@somemail.com",
+    "homeAddress": {
+      "country": "Finnland",
+      "city": "Espoo",
+      "postalCode": "02150",
+      "street": "maarintie 6",
+      "addition": ""
+    }
+  }
+]

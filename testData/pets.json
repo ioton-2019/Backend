@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Karl",
+    "ownerID": "5ccda4dfcb0e0c4af154fef5",
+    "type": "dog",
+    "lastSeen": [
+      {
+        "lampID": "5ccd93b581645168a984dc37",
+        "timestamp": "2019-05-04T14:47:35.071Z"
+      },
+      {
+        "lampID": "5ccd93b581645168a984dc38",
+        "timestamp": "2019-05-04T14:57:26.756Z"
+      }
+    ]
+  },
+  {
+    "name": "Lucy",
+    "ownerID": "5ccda4dfcb0e0c4af154fef5",
+    "type": "cat",
+    "lastSeen": [
+      {
+        "lampID": "5ccd93b581645168a984dc3a",
+        "timestamp": "2019-05-04T15:03:01.454Z"
+      }
+    ]
+  }
+]
