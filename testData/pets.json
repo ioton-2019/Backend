@@ -3,6 +3,7 @@
     "name": "Karl",
     "ownerID": "5ccda4dfcb0e0c4af154fef5",
     "type": "dog",
+    "isMissing": false,
     "lastSeen": [
       {
         "lampID": "5ccd93b581645168a984dc37",
@@ -18,6 +19,7 @@
     "name": "Lucy",
     "ownerID": "5ccda4dfcb0e0c4af154fef5",
     "type": "cat",
+    "isMissing": false,
     "lastSeen": [
       {
         "lampID": "5ccd93b581645168a984dc3a",

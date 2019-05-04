@@ -85,6 +85,7 @@ petsRouter.route('/:id')
     } else {
       if (req.body.__v !== undefined) delete req.body.__v
       if (req.body.id !== undefined) delete req.body.id
+      if (req.body.timestamp && req.body.lampID) req.body = { $push: { lastSeen: req.body } }
       PetsModel.findByIdAndUpdate(req.params.id, req.body, { upsert: true, new: true }, (err, item) => {
         if (!err) res.status(200).json(item)
         else res.status(404).json({ 'error': err, 'code': 404 })

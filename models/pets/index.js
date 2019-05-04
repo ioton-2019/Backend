@@ -12,6 +12,7 @@ const mongoose = require('mongoose')
 const logger = requireWrapper('helpers/logger')
 
 const Schema = mongoose.Schema
+
 const LastSeenSchema = new Schema({
   lampID: { type: String, required: true },
   timestamp: { type: Date, required: true }
@@ -22,6 +23,7 @@ const PetSchema = new Schema(
     name: { type: String, required: true },
     ownerID: { type: String, required: true },
     type: { type: String, required: true },
+    isMissing: { type: Boolean, required: true, default: false },
     lastSeen: [ LastSeenSchema ]
   },
   {

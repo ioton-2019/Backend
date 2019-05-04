@@ -13,7 +13,7 @@ ownersRouter.route('/')
       if (!err) res.status(200).json(items)
       else {
         res.status(400).json({ error: err.message, 'code': 400 })
-        logger.error(err)
+        // logger.error(err)
       }
     })
   })
@@ -23,7 +23,7 @@ ownersRouter.route('/')
       if (!err) res.status(201).json(owner)
       else {
         res.status(400).json({ error: err.message, code: 400 })
-        logger.error(err)
+        // logger.error(err)
       }
     })
   })
