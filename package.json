@@ -1,0 +1,44 @@
+{
+  "name": "iothon-backend-preparation",
+  "version": "0.0.1",
+  "description": "Backend preparation for IoThon",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/nodemon/bin/nodemon.js app.js",
+    "test": "jest --notify --detectOpenHandles"
+  },
+  "keywords": [],
+  "author": "Arne Rolf",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
+    "express": "^4.16.4",
+    "helmet": "^3.16.0",
+    "influxdb-nodejs": "^3.0.0",
+    "mongoose": "^5.5.4",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.11",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "jest": "^24.7.1",
+    "moxios": "^0.4.0",
+    "supertest": "^4.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ioton-2019/Backend-preparation"
+  },
+  "bugs": "https://github.com/ioton-2019/Backend-preparation/issues",
+  "engines": {
+    "node": ">= 10.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "resolutions": {
+    "nodemon/chokidar/fsevents": "2.0.6"
+  }
+}
